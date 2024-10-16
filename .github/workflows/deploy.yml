@@ -21,12 +21,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build Vue 3
         run: |
           cd playgrounds/vue
-          npm i
-          npm run build
+          pnpm run build
 
       - name: Prepare deploy
         run: |
