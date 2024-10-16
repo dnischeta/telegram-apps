@@ -25,8 +25,8 @@ jobs:
       - name: Build Vue 3
         run: |
           cd playgrounds/vue
-          pnpm i
-          pnpm run build
+          npm i
+          npm run build
 
       - name: Prepare deploy
         run: |
